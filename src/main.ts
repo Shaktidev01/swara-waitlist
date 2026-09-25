@@ -19,6 +19,7 @@ form.addEventListener('submit', async (e) => {
   const name = (document.getElementById('name') as HTMLInputElement).value.trim();
   const email = (document.getElementById('email') as HTMLInputElement).value.trim();
   const useCase = (document.getElementById('use-case') as HTMLSelectElement).value;
+  const useCaseDetail = (document.getElementById('use-case-detail') as HTMLInputElement).value.trim();
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     errorEl.textContent = 'Enter a valid email address.';
@@ -43,6 +44,7 @@ form.addEventListener('submit', async (e) => {
     email,
     name: name || null,
     use_case: useCase,
+    use_case_detail: useCaseDetail || null,
     source: document.referrer || 'direct',
   });
 
