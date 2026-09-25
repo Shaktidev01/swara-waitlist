@@ -71,11 +71,9 @@
 
           <form class="waitlist-form" id="waitlist" novalidate>
             <div id="form-body">
-              <div class="row">
+              <div class="field-group">
                 <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required/>
                 <input type="email" id="email" name="email" placeholder="you@business.com" required autocomplete="email"/>
-              </div>
-              <div class="row">
                 <select id="use-case" name="use_case" required>
                   <option value="" disabled selected>What will you use Swara for?</option>
                   <option value="real_estate">Real estate lead follow-up</option>
@@ -87,8 +85,6 @@
                   <option value="support">Customer support / inbound</option>
                   <option value="other">Something else</option>
                 </select>
-              </div>
-              <div class="row">
                 <input type="text" id="use-case-detail" name="use_case_detail" placeholder="Anything else you'd like to tell us? (optional)"/>
               </div>
               <button class="cta-btn full" type="submit" id="submit-btn">Join the waitlist</button>
