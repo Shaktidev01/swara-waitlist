@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Swara is an AI voice employee that calls, qualifies, and books your leads in Telugu, Hindi, Tamil, and English. Join the waitlist for early access." />
+    <title>Swara — Join the waitlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+Tamil:wght@600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <template id="page-template">
+      <div class="page">
+        <header class="nav">
+          <div class="brand">
+            <span class="brand-mark" id="brand-mark-slot"></span>
+            <div class="brand-text"><strong>Swara</strong><small><span class="dot-live"></span>AI Voice Employee</small></div>
+          </div>
+          <nav class="nav-links">
+            <a href="#hero" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#waitlist">Waitlist</a>
+          </nav>
+        </header>
+
+        <section class="hero" id="hero">
+          <div class="hero-top">
+            <div>
+              <p class="eyebrow-jp">స్వర ・ AI వాయిస్ ఉద్యోగి</p>
+              <h1>Hi, I'm Swara.</h1>
+              <p>I call your leads the moment they arrive, in Telugu, Hindi, Tamil, or English, and book the meeting before your team even wakes up.</p>
+            </div>
+            <div class="hero-bird" id="hero-bird-slot"></div>
+          </div>
+          <div class="dots"><span class="on"></span><span></span><span></span></div>
+
+          <form class="waitlist-form" id="waitlist" novalidate>
+            <div id="form-body">
+              <div class="row">
+                <input type="email" id="email" name="email" placeholder="you@business.com" required autocomplete="email"/>
+                <input type="text" id="name" name="name" placeholder="Name (optional)" autocomplete="name"/>
+                <button class="cta-btn" type="submit" id="submit-btn">Join the waitlist</button>
+              </div>
+              <p class="form-note">No spam. One email when Swara opens up early access.</p>
+              <p class="form-error" id="form-error" hidden></p>
+            </div>
+          </form>
+        </section>
+
+        <section class="grid-2" id="about">
+          <div class="card about-card">
+            <div class="head"><h2>About Swara</h2><span class="jp">について</span></div>
+            <p>Swara answers your Meta, Google, and website leads on the phone within seconds of them arriving, qualifies them in their own language, and hands your team a ready-to-close appointment — no missed calls, no cold leads sitting overnight.</p>
+            <hr/>
+            <p class="waitlist-count" id="waitlist-count">Join the early access list.</p>
+          </div>
+          <div class="stack">
+            <div class="voice-card"><span id="friendly-bird-slot"></span><span>Friendly Voice</span></div>
+            <div class="voice-card"><span id="formal-bird-slot"></span><span>Formal Voice</span></div>
+          </div>
+        </section>
+
+        <section class="stats-row">
+          <div class="stat-card">
+            <span class="big">Q1</span>
+            <span class="lbl">2027 · Early access opens</span>
+          </div>
+          <div class="stat-card perks light">
+            <span class="lbl" style="font-weight:800;color:var(--steel-darker);">Founding member perks</span>
+            <ul>
+              <li>Locked-in launch pricing</li>
+              <li>Priority onboarding call</li>
+              <li>Direct line to the team</li>
+            </ul>
+          </div>
+          <div class="cta-card">
+            <strong>Want a live demo call first?</strong>
+            <button id="scroll-to-form" type="button">Join waitlist →</button>
+          </div>
+        </section>
+
+        <footer class="footer-bar">
+          <div class="avatars">
+            <span class="av">S<span class="go"></span></span>
+            <span class="av">A<span class="go"></span></span>
+            <span class="av">R<span class="go"></span></span>
+            <span class="av">K</span>
+            <span class="av">+</span>
+          </div>
+          <span class="made">Made by Swara AI</span>
+        </footer>
+      </div>
+    </template>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
