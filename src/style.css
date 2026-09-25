@@ -151,6 +151,7 @@ p{margin:0;}
 .cta-btn:active{transform:scale(0.98);}
 .cta-btn:disabled{opacity:0.6;cursor:default;}
 .cta-btn.light{background:#fff;color:var(--teal-dark);}
+.cta-btn.full{width:100%;padding:13px 22px;}
 .form-note{font-size:0.74rem;opacity:0.8;margin:0;}
 .form-error{font-size:0.8rem;color:#ffd3d3;margin:0;font-weight:700;}
 .waitlist-count{font-size:0.76rem;font-weight:700;opacity:0.85;margin:0;min-height:1em;}
