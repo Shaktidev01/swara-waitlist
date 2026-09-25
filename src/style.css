@@ -130,6 +130,8 @@ p{margin:0;}
   padding-right:36px;
 }
 .waitlist-form input::placeholder{color:#8496a3;font-weight:500;}
+.waitlist-form select:invalid{color:#8496a3;font-weight:500;}
+.waitlist-form select option{color:var(--ink);font-weight:500;}
 .waitlist-form input:focus,
 .waitlist-form select:focus{outline:none;box-shadow:0 0 0 3px var(--ring);}
 .cta-btn{
