@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Swara is an AI voice employee that calls, qualifies, and books your leads in Telugu, Hindi, Tamil, and English. Join the waitlist for early access." />
-    <title>Swara — Join the waitlist</title>
+    <meta name="description" content="Swara is an AI voice employee that calls, qualifies, and books your leads in Telugu, Hindi, Tamil, and English — within seconds of them arriving. Join the waitlist for early access." />
+    <title>Swara — AI voice employee for Indian businesses</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+Tamil:wght@600&display=swap" rel="stylesheet" />
@@ -13,86 +13,226 @@
   <body>
     <div id="app"></div>
 
+    <template id="header-template">
+      <header class="nav">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" data-slot="brand-mark"></span>
+          <div class="brand-text"><strong>Swara</strong><small><span class="dot-live"></span>AI Voice Employee</small></div>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html" data-page="home">Home</a>
+          <a href="about.html" data-page="about">About</a>
+          <a href="integrations.html" data-page="integrations">Integrations</a>
+        </nav>
+        <a class="nav-cta" href="index.html#waitlist">Join waitlist</a>
+      </header>
+    </template>
+
+    <template id="footer-template">
+      <footer class="site-footer">
+        <div class="footer-top">
+          <div class="brand">
+            <span class="brand-mark" data-slot="brand-mark"></span>
+            <div class="brand-text"><strong>Swara</strong><small>AI Voice Employee</small></div>
+          </div>
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="integrations.html">Integrations</a>
+            <a href="index.html#waitlist">Join waitlist</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>Built on Sarvam AI · Made in India</span>
+          <span>© 2027 Swara AI</span>
+        </div>
+      </footer>
+    </template>
+
     <template id="page-template">
       <div class="page">
-        <header class="nav">
-          <div class="brand">
-            <span class="brand-mark" id="brand-mark-slot"></span>
-            <div class="brand-text"><strong>Swara</strong><small><span class="dot-live"></span>AI Voice Employee</small></div>
-          </div>
-          <nav class="nav-links">
-            <a href="#hero" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#waitlist">Waitlist</a>
-          </nav>
-        </header>
+        <div data-slot="header"></div>
 
         <section class="hero" id="hero">
           <div class="hero-top">
             <div>
               <p class="eyebrow-jp">స్వర ・ AI వాయిస్ ఉద్యోగి</p>
               <h1>Hi, I'm Swara.</h1>
-              <p>I call your leads the moment they arrive, in Telugu, Hindi, Tamil, or English, and book the meeting before your team even wakes up.</p>
+              <p>I call your leads the moment they arrive, in Telugu, Hindi, Tamil, or English, qualify them like your best salesperson, and hand your team a ready-to-close appointment — before a human even picks up the phone.</p>
+              <div class="trust-chips">
+                <span>Built on Sarvam AI</span>
+                <span>Made in India</span>
+                <span>4 Indian languages</span>
+              </div>
             </div>
-            <div class="hero-bird" id="hero-bird-slot"></div>
+            <div class="hero-bird" data-slot="hero-bird"></div>
           </div>
           <div class="dots"><span class="on"></span><span></span><span></span></div>
 
           <form class="waitlist-form" id="waitlist" novalidate>
             <div id="form-body">
               <div class="row">
+                <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required/>
                 <input type="email" id="email" name="email" placeholder="you@business.com" required autocomplete="email"/>
-                <input type="text" id="name" name="name" placeholder="Name (optional)" autocomplete="name"/>
+              </div>
+              <div class="row">
+                <select id="use-case" name="use_case" required>
+                  <option value="" disabled selected>What will you use Swara for?</option>
+                  <option value="real_estate">Real estate lead follow-up</option>
+                  <option value="admissions">Admissions / coaching enquiries</option>
+                  <option value="clinic">Clinic / diagnostics appointments</option>
+                  <option value="ecommerce">E-commerce order & COD confirmation</option>
+                  <option value="loans_insurance">Loans & insurance qualification</option>
+                  <option value="recruitment">Recruitment screening calls</option>
+                  <option value="support">Customer support / inbound</option>
+                  <option value="other">Something else</option>
+                </select>
                 <button class="cta-btn" type="submit" id="submit-btn">Join the waitlist</button>
               </div>
               <p class="form-note">No spam. One email when Swara opens up early access.</p>
+              <p class="waitlist-count" id="waitlist-count"></p>
               <p class="form-error" id="form-error" hidden></p>
             </div>
           </form>
         </section>
 
-        <section class="grid-2" id="about">
-          <div class="card about-card">
-            <div class="head"><h2>About Swara</h2><span class="jp">について</span></div>
-            <p>Swara answers your Meta, Google, and website leads on the phone within seconds of them arriving, qualifies them in their own language, and hands your team a ready-to-close appointment — no missed calls, no cold leads sitting overnight.</p>
-            <hr/>
-            <p class="waitlist-count" id="waitlist-count">Join the early access list.</p>
+        <section class="how-it-works">
+          <div class="section-head">
+            <span class="eyebrow">HOW IT WORKS</span>
+            <h2>From new lead to booked meeting, in one call.</h2>
           </div>
-          <div class="stack">
-            <div class="voice-card"><span id="friendly-bird-slot"></span><span>Friendly Voice</span></div>
-            <div class="voice-card"><span id="formal-bird-slot"></span><span>Formal Voice</span></div>
-          </div>
-        </section>
-
-        <section class="stats-row">
-          <div class="stat-card">
-            <span class="big">Q1</span>
-            <span class="lbl">2027 · Early access opens</span>
-          </div>
-          <div class="stat-card perks light">
-            <span class="lbl" style="font-weight:800;color:var(--steel-darker);">Founding member perks</span>
-            <ul>
-              <li>Locked-in launch pricing</li>
-              <li>Priority onboarding call</li>
-              <li>Direct line to the team</li>
-            </ul>
-          </div>
-          <div class="cta-card">
-            <strong>Want a live demo call first?</strong>
-            <button id="scroll-to-form" type="button">Join waitlist →</button>
+          <div class="steps-row">
+            <div class="step-card">
+              <span class="step-num">1</span>
+              <h3>A lead arrives</h3>
+              <p>From Meta, Google, your website, or a spreadsheet upload — Swara sees it the second it lands.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step-card">
+              <span class="step-num">2</span>
+              <h3>Swara calls, in seconds</h3>
+              <p>Answers in the caller's own language, follows your exact script, and handles objections naturally.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step-card">
+              <span class="step-num">3</span>
+              <h3>Your team gets the outcome</h3>
+              <p>Appointment booked, summary written, and a WhatsApp or calendar invite sent — automatically.</p>
+            </div>
           </div>
         </section>
 
-        <footer class="footer-bar">
-          <div class="avatars">
-            <span class="av">S<span class="go"></span></span>
-            <span class="av">A<span class="go"></span></span>
-            <span class="av">R<span class="go"></span></span>
-            <span class="av">K</span>
-            <span class="av">+</span>
+        <section class="industries">
+          <div class="section-head">
+            <span class="eyebrow">WHO IT'S FOR</span>
+            <h2>Built for how Indian businesses actually sell.</h2>
           </div>
-          <span class="made">Made by Swara AI</span>
-        </footer>
+          <div class="industry-grid">
+            <div class="industry-card"><span class="ind-icon">🏢</span><strong>Real estate & builders</strong><p>Qualify site-visit leads before they go cold.</p></div>
+            <div class="industry-card"><span class="ind-icon">🎓</span><strong>Coaching & admissions</strong><p>Answer every enquiry, even at 11pm.</p></div>
+            <div class="industry-card"><span class="ind-icon">🩺</span><strong>Clinics & diagnostics</strong><p>Confirm appointments, cut no-shows.</p></div>
+            <div class="industry-card"><span class="ind-icon">🛍️</span><strong>E-commerce & D2C</strong><p>Confirm COD orders before they're shipped.</p></div>
+            <div class="industry-card"><span class="ind-icon">💳</span><strong>Loans & insurance</strong><p>Qualify applicants at the speed they apply.</p></div>
+            <div class="industry-card"><span class="ind-icon">👥</span><strong>Recruitment</strong><p>Screen candidates in bulk, same day.</p></div>
+          </div>
+        </section>
+
+        <section class="features">
+          <div class="section-head">
+            <span class="eyebrow">WHAT MAKES SWARA DIFFERENT</span>
+            <h2>Not a robotic IVR. Not a call centre.</h2>
+          </div>
+          <div class="feature-grid">
+            <div class="feature-card"><span class="feat-icon">🗣️</span><strong>Natural code-switching</strong><p>Speaks the Telugu-English or Hindi-English mix your customers actually use.</p></div>
+            <div class="feature-card"><span class="feat-icon">⚡</span><strong>Answers in seconds</strong><p>No lead sits waiting. Swara dials the moment it arrives, any hour.</p></div>
+            <div class="feature-card"><span class="feat-icon">🧠</span><strong>Remembers the whole call</strong><p>Tracks budget, objections, and preferences without asking twice.</p></div>
+            <div class="feature-card"><span class="feat-icon">📅</span><strong>WhatsApp & Calendar built in</strong><p>Confirmations and invites go out the moment a slot is booked.</p></div>
+            <div class="feature-card"><span class="feat-icon">📝</span><strong>Every call, transcribed</strong><p>Full transcript and outcome summary land in your dashboard automatically.</p></div>
+            <div class="feature-card"><span class="feat-icon">🎛️</span><strong>You write the script</strong><p>Edit exactly what Swara says from a simple dashboard — no code.</p></div>
+          </div>
+        </section>
+
+        <section class="compare">
+          <div class="section-head">
+            <span class="eyebrow">THE MATH</span>
+            <h2>How Swara stacks up against the alternatives.</h2>
+          </div>
+          <div class="compare-table-wrap">
+            <table class="compare-table">
+              <thead>
+                <tr><th></th><th class="col-swara">Swara</th><th>Human telecaller</th><th>Generic AI caller</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Speed to lead</td><td class="col-swara">Seconds</td><td>Hours, if at all</td><td>Minutes</td></tr>
+                <tr><td>Availability</td><td class="col-swara">24×7</td><td>Business hours</td><td>24×7</td></tr>
+                <tr><td>Indian languages</td><td class="col-swara">Native code-switching</td><td>Depends on hire</td><td>Usually English-only</td></tr>
+                <tr><td>Time to hire / deploy</td><td class="col-swara">Minutes</td><td>Weeks</td><td>Days</td></tr>
+                <tr><td>Consistency</td><td class="col-swara">Same script, every call</td><td>Varies by mood, day</td><td>Often robotic</td></tr>
+                <tr><td>Cost</td><td class="col-swara">A fraction of a salary</td><td>Full-time salary + attrition</td><td>Per-minute, opaque</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="perks-section">
+          <div class="section-head">
+            <span class="eyebrow">FOUNDING MEMBERS</span>
+            <h2>Join now, and launch on us.</h2>
+          </div>
+          <div class="perks-grid">
+            <div class="perk-card"><span class="perk-icon">🎁</span><strong>Free setup & infrastructure</strong><p>Zero setup cost — we configure everything for you.</p></div>
+            <div class="perk-card"><span class="perk-icon">📞</span><strong>Free calling credits</strong><p>Outbound and inbound call credits to get started, on us.</p></div>
+            <div class="perk-card"><span class="perk-icon">🧑‍💼</span><strong>Your first AI employee, free</strong><p>We build and configure your first employee at no cost.</p></div>
+            <div class="perk-card"><span class="perk-icon">💬</span><strong>Free WhatsApp & Calendar integration</strong><p>Confirmations and bookings connected from day one.</p></div>
+            <div class="perk-card"><span class="perk-icon">🏷️</span><strong>Founding-member pricing</strong><p>Locked-in discounts and privileges, for as long as you stay.</p></div>
+            <div class="perk-card"><span class="perk-icon">🛟</span><strong>Priority, on-time support</strong><p>A direct line to the team — not a ticket queue.</p></div>
+          </div>
+        </section>
+
+        <section class="faq">
+          <div class="section-head">
+            <span class="eyebrow">A FEW ANSWERS</span>
+            <h2>Questions people usually ask.</h2>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary>What exactly is Swara?</summary>
+              <p>An AI voice employee that calls your leads on the phone — not a chatbot. It speaks, listens, and responds in real time, following the script you give it.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Which languages does it speak?</summary>
+              <p>Telugu, Hindi, Tamil, and English today, including natural code-switching between English and a regional language — the way people actually talk on the phone.</p>
+            </details>
+            <details class="faq-item">
+              <summary>How fast does it actually call?</summary>
+              <p>The moment a lead lands — from an ad, a form, or a CRM — Swara can start dialling within seconds, day or night.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Does it sound robotic?</summary>
+              <p>No. Swara is built on Sarvam AI's Indian-language speech models, tuned for natural, conversational delivery rather than a flat text-to-speech voice.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What do I get for joining the waitlist?</summary>
+              <p>Founding-member perks — free setup, free calling credits, your first employee built for free, and priority support — plus first access when early availability opens.</p>
+            </details>
+            <details class="faq-item">
+              <summary>When does it launch?</summary>
+              <p>Early access opens in phases, starting with the founding-member waitlist. Join now to be called first.</p>
+            </details>
+          </div>
+        </section>
+
+        <section class="final-cta">
+          <div class="final-cta-inner">
+            <div>
+              <h2>Don't let another lead go cold.</h2>
+              <p>Join the founding-member waitlist — it takes 20 seconds.</p>
+            </div>
+            <button id="scroll-to-form" type="button" class="cta-btn light">Join the waitlist →</button>
+          </div>
+        </section>
+
+        <div data-slot="footer"></div>
       </div>
     </template>
 

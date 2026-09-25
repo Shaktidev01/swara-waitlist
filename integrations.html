@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Connect Swara to wherever your leads already come from — Meta and Instagram ads, Google Ads, website forms, spreadsheets, WhatsApp, and your CRM — with one endpoint." />
+    <title>Swara integrations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+Tamil:wght@600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <template id="header-template">
+      <header class="nav">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" data-slot="brand-mark"></span>
+          <div class="brand-text"><strong>Swara</strong><small><span class="dot-live"></span>AI Voice Employee</small></div>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html" data-page="home">Home</a>
+          <a href="about.html" data-page="about">About</a>
+          <a href="integrations.html" data-page="integrations">Integrations</a>
+        </nav>
+        <a class="nav-cta" href="index.html#waitlist">Join waitlist</a>
+      </header>
+    </template>
+
+    <template id="footer-template">
+      <footer class="site-footer">
+        <div class="footer-top">
+          <div class="brand">
+            <span class="brand-mark" data-slot="brand-mark"></span>
+            <div class="brand-text"><strong>Swara</strong><small>AI Voice Employee</small></div>
+          </div>
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="integrations.html">Integrations</a>
+            <a href="index.html#waitlist">Join waitlist</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>Built on Sarvam AI · Made in India</span>
+          <span>© 2027 Swara AI</span>
+        </div>
+      </footer>
+    </template>
+
+    <template id="page-template">
+      <div class="page">
+        <div data-slot="header"></div>
+
+        <section class="hero small">
+          <div class="hero-top">
+            <div>
+              <p class="eyebrow-jp">కనెక్షన్స్ ・ Connect your leads</p>
+              <h1>Connect where your leads come from.</h1>
+              <p>One endpoint, any source. The moment a lead arrives, Swara calls — so your team never sees a cold one.</p>
+            </div>
+            <div class="hero-bird" data-slot="hero-bird"></div>
+          </div>
+        </section>
+
+        <section class="integrations-section">
+          <div class="section-head">
+            <span class="eyebrow">DAY-ONE INTEGRATIONS</span>
+            <h2>Works with whatever you already use.</h2>
+            <p class="section-sub">Anything that can send a lead can send it to Swara — no engineering team required.</p>
+          </div>
+          <div class="integration-grid">
+            <div class="integration-chip">Facebook Ads</div>
+            <div class="integration-chip">Instagram Ads</div>
+            <div class="integration-chip">Google Ads</div>
+            <div class="integration-chip">Google Sheets</div>
+            <div class="integration-chip">Google Forms</div>
+            <div class="integration-chip">WhatsApp</div>
+            <div class="integration-chip">Google Calendar</div>
+            <div class="integration-chip">Website Forms</div>
+            <div class="integration-chip">Shopify</div>
+            <div class="integration-chip">WooCommerce</div>
+            <div class="integration-chip">Zoho CRM</div>
+            <div class="integration-chip">HubSpot</div>
+            <div class="integration-chip">Zapier</div>
+            <div class="integration-chip">Make</div>
+            <div class="integration-chip">Pabbly Connect</div>
+            <div class="integration-chip">Your own API</div>
+          </div>
+        </section>
+
+        <section class="how-it-works">
+          <div class="section-head">
+            <span class="eyebrow">HOW THE CONNECTION WORKS</span>
+            <h2>Send a lead, get a call. That's the whole idea.</h2>
+          </div>
+          <div class="steps-row">
+            <div class="step-card">
+              <span class="step-num">1</span>
+              <h3>A lead is captured</h3>
+              <p>On Meta, Google, your website, or wherever your forms already live.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step-card">
+              <span class="step-num">2</span>
+              <h3>It reaches Swara</h3>
+              <p>Directly, or through Zapier, Make, or Pabbly Connect if the source doesn't post natively.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step-card">
+              <span class="step-num">3</span>
+              <h3>The call happens instantly</h3>
+              <p>Swara dials, qualifies, and books — then sends the outcome back to WhatsApp, your calendar, or your CRM.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="webhook-section">
+          <div class="section-head">
+            <span class="eyebrow">FOR DEVELOPERS</span>
+            <h2>Or just send us JSON.</h2>
+          </div>
+          <div class="card webhook-card">
+            <p>Every workspace gets one secure endpoint. POST a lead's name, phone number, and any custom fields your script needs — Swara handles the rest.</p>
+            <pre class="webhook-example"><code>POST /lead-intake/&lt;your-endpoint&gt;
+Content-Type: application/json
+X-Swara-Lead-Secret: &lt;your-secret&gt;
+
+{
+  "name": "Ramesh",
+  "phone": "+91XXXXXXXXXX",
+  "budget": "60L-70L"
+}</code></pre>
+            <p class="webhook-note">Unknown fields are accepted and ignored, so you can post your source's whole payload without trimming it first.</p>
+          </div>
+        </section>
+
+        <section class="final-cta">
+          <div class="final-cta-inner">
+            <div>
+              <h2>Get your leads called in seconds, not hours.</h2>
+              <p>Join the founding-member waitlist to be first in line.</p>
+            </div>
+            <a href="index.html#waitlist" class="cta-btn light">Join the waitlist →</a>
+          </div>
+        </section>
+
+        <div data-slot="footer"></div>
+      </div>
+    </template>
+
+    <script type="module" src="/src/integrations.ts"></script>
+  </body>
+</html>
