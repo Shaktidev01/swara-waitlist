@@ -7,6 +7,53 @@ const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
 const supabase = SUPABASE_URL && SUPABASE_ANON_KEY ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 
 mountChrome('home');
+setupVoiceSamples();
+
+function setupVoiceSamples() {
+  const audio = document.getElementById('sample-audio') as HTMLAudioElement;
+  const chips = document.querySelectorAll<HTMLButtonElement>('.sample-chip');
+  let activeChip: HTMLButtonElement | null = null;
+
+  function resetChip(chip: HTMLButtonElement) {
+    chip.classList.remove('playing', 'loading');
+    chip.textContent = `▶ ${chip.dataset.label || chip.textContent!.replace(/^[▶⏸…]\s*/, '')}`;
+  }
+
+  chips.forEach((chip) => {
+    const label = chip.textContent!.replace(/^[▶⏸…]\s*/, '');
+    chip.dataset.label = label;
+
+    chip.addEventListener('click', () => {
+      const lang = chip.dataset.lang!;
+      if (activeChip === chip && !audio.paused) {
+        audio.pause();
+        resetChip(chip);
+        activeChip = null;
+        return;
+      }
+      if (activeChip && activeChip !== chip) resetChip(activeChip);
+
+      chip.classList.add('loading');
+      chip.textContent = `… ${label}`;
+      audio.src = `/audio/${lang}.mp3`;
+      audio.play().catch(() => {
+        resetChip(chip);
+      });
+      activeChip = chip;
+    });
+  });
+
+  audio.addEventListener('playing', () => {
+    if (!activeChip) return;
+    activeChip.classList.remove('loading');
+    activeChip.classList.add('playing');
+    activeChip.textContent = `⏸ ${activeChip.dataset.label}`;
+  });
+  audio.addEventListener('ended', () => {
+    if (activeChip) resetChip(activeChip);
+    activeChip = null;
+  });
+}
 
 const form = document.getElementById('waitlist') as HTMLFormElement;
 const errorEl = document.getElementById('form-error') as HTMLParagraphElement;
